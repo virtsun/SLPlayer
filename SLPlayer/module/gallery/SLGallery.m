@@ -79,16 +79,16 @@
         //PHAssetCollectionSubtypeAlbumRegular,自定义相册
         //PHAssetCollectionSubtypeAlbumSyncedAlbum，通过iTunes同步过来的相册
         // 获得所有的自定义相簿
-        PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumSyncedAlbum options:nil];
-        // 遍历所有的自定义相簿
-        
+//        PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumSyncedAlbum options:nil];
+//        // 遍历所有的自定义相簿
+//
         NSMutableArray<PHAsset*> *array = [@[] mutableCopy];
-        for (PHAssetCollection *assetCollection in assetCollections) {
-            PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
-            for (PHAsset *asset in assets){
-                [array addObject:asset];
-            }
-        }
+//        for (PHAssetCollection *assetCollection in assetCollections) {
+//            PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
+//            for (PHAsset *asset in assets){
+//                [array addObject:asset];
+//            }
+//        }
         
         // 获得相机胶卷
         PHAssetCollection *cameraRoll = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil].lastObject;
