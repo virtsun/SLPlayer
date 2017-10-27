@@ -41,6 +41,7 @@
 		D4005FBE1FA066D300CB06D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4005FBD1FA066D300CB06D8 /* QuartzCore.framework */; };
 		D400601E1FA07E9C00CB06D8 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D400601D1FA07E9C00CB06D8 /* libiconv.tbd */; };
 		D4E4BA4A1FA1E728006BFAB4 /* SLGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA491FA1E728006BFAB4 /* SLGallery.m */; };
+		D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,8 @@
 		D400601D1FA07E9C00CB06D8 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		D4E4BA481FA1E728006BFAB4 /* SLGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGallery.h; sourceTree = "<group>"; };
 		D4E4BA491FA1E728006BFAB4 /* SLGallery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLGallery.m; sourceTree = "<group>"; };
+		D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Signal.m"; sourceTree = "<group>"; };
+		D4E4BA551FA326CE006BFAB4 /* NSException+Signal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+Signal.h"; sourceTree = "<group>"; };
 		D909E62FAEF729C3D3A708C6 /* Pods_SLPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -146,8 +149,9 @@
 		1D33D34BE864E04F6509624E /* SLPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				1D33D8EDB2CF3E9FDEAADF13 /* catagory */,
 				1D33D59589C12036FCBC3695 /* resource */,
+				1D33DD8A55FF36FF44375165 /* custom */,
+				1D33D8EDB2CF3E9FDEAADF13 /* catagory */,
 				1D33D2C6D88511F46DDD5C63 /* types */,
 				1D33DFA66C4C9BF6599E9721 /* module */,
 				1D33D0A6508C0D40B618D315 /* layout */,
@@ -162,7 +166,6 @@
 				1D33DDEBB820B2C02F8AD33F /* LaunchScreen.storyboard */,
 				1D33DB528B59B696F6133D1F /* Info.plist */,
 				1D33D642DBB0DD67F22011F0 /* main.m */,
-				1D33DD8A55FF36FF44375165 /* custom */,
 			);
 			path = SLPlayer;
 			sourceTree = "<group>";
@@ -195,6 +198,8 @@
 		1D33D8358C4427CF4518199F /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				D4E4BA551FA326CE006BFAB4 /* NSException+Signal.h */,
+				D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */,
 				1D33D419AD7CDDE0141806AB /* BSBacktraceLogger.h */,
 				1D33D7162E8E7EE7339641CB /* BSBacktraceLogger.m */,
 				1D33D139AA7FB04516E059B8 /* NSArray+Swizzling.h */,
@@ -440,6 +445,7 @@
 				1D33DF85113ECE5E951A7EC7 /* SLGalleryLayout.m in Sources */,
 				1D33D6AA891FB7293BD0CADB /* BSBacktraceLogger.m in Sources */,
 				1D33D521E526C87FCBBB13FB /* NSArray+Swizzling.m in Sources */,
+				D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */,
 				1D33DF46211C802B5A607AB7 /* NSDictionary+NilSafe.m in Sources */,
 				1D33DBFAA41258D3B6E2E35B /* NSObject+Swizzling.m in Sources */,
 				1D33DC5BEE1830266D03BBDD /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
