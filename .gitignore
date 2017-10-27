@@ -20,6 +20,7 @@ DerivedData
 *.pbxproj-e
 #CocoaPods
 Pods
+Podfile.lock
 
 #AutoBuild
 build
