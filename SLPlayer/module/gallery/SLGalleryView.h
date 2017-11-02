@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SLGallery.h"
+
+@class SLGalleryView;
+@protocol SLGalleryViewDelegate<NSObject>
+
+- (void)SLGallery:(SLGalleryView *)gallery didSelectedItem:(PHAsset *)asset;
+
+@end
+
 @interface SLGalleryView : UIView
+
+@property(nonatomic, weak) id<SLGalleryViewDelegate> delegate;
 
 @end

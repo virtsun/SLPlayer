@@ -13,8 +13,9 @@
 
 #import "SLGalleryView.h"
 #import "SLHamburgerButton.h"
+#import <CLImageEditor/CLImageEditor.h>
 
-@interface ViewController ()
+@interface ViewController ()<SLGalleryViewDelegate>
 
 //@property(nonatomic,strong)IJKFFMoviePlayerController *moviePlayer;
 
@@ -65,7 +66,7 @@
 
     SLGalleryView *gallery = [[SLGalleryView alloc] init];
     gallery.frame = self.view.bounds;
-    
+    gallery.delegate = self;
     [self.view addSubview:gallery];
 }
 
@@ -82,6 +83,20 @@
     
     [self.navigationController pushViewController:test animated:YES];
     
+}
+
+#pragma mark --
+#pragma mark -- SLGalleryView
+- (void)SLGallery:(SLGalleryView *)gallery didSelectedItem:(PHAsset *)asset{
+    [SLGallery fetchImageWithPHAsset:asset
+                           completed:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
+                               dispatch_main_async_safe(^{
+                                   CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:image];
+                           //        editor.delegate = self;
+                                   
+                                   [self.navigationController pushViewController:editor animated:YES];
+                               });
+                           }];
 }
 
 @end

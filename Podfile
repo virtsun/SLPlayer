@@ -4,6 +4,9 @@ target 'SLPlayer' do
 
     use_frameworks!
     pod 'iCarousel', '~> 1.8.3'
+    pod 'CLImageEditor'
+    pod 'CVCocoaHTTPServer', '~> 1.0'
+
 end
 
 post_install do |installer|

@@ -9,7 +9,6 @@
 #import "SLGalleryView.h"
 #import "SLGalleryLayout.h"
 #import "macro.h"
-#import "SLGallery.h"
 #import <iCarousel/iCarousel.h>
 
 @interface SLGalleryView()<iCarouselDataSource, iCarouselDelegate>
@@ -85,6 +84,11 @@
         return value * 1.1;
     }
     return value;
+}
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+    if ([_delegate respondsToSelector:@selector(SLGallery:didSelectedItem:)]){
+        [_delegate SLGallery:self didSelectedItem:_photos[index]];
+    }
 }
 
 @end

@@ -40,6 +40,8 @@
 		D4005FBC1FA0669200CB06D8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4005FBB1FA0669200CB06D8 /* libz.tbd */; };
 		D4005FBE1FA066D300CB06D8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4005FBD1FA066D300CB06D8 /* QuartzCore.framework */; };
 		D400601E1FA07E9C00CB06D8 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D400601D1FA07E9C00CB06D8 /* libiconv.tbd */; };
+		D44BCBA11FAB1254001A324F /* SLHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */; };
+		D44BCBA31FAB12C0001A324F /* WebServer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D44BCBA21FAB12C0001A324F /* WebServer.bundle */; };
 		D4E4BA4A1FA1E728006BFAB4 /* SLGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA491FA1E728006BFAB4 /* SLGallery.m */; };
 		D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,9 @@
 		D4005FBB1FA0669200CB06D8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D4005FBD1FA066D300CB06D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D400601D1FA07E9C00CB06D8 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D44BCB9F1FAB1254001A324F /* SLHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLHTTPConnection.h; sourceTree = "<group>"; };
+		D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLHTTPConnection.m; sourceTree = "<group>"; };
+		D44BCBA21FAB12C0001A324F /* WebServer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WebServer.bundle; sourceTree = "<group>"; };
 		D4E4BA481FA1E728006BFAB4 /* SLGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGallery.h; sourceTree = "<group>"; };
 		D4E4BA491FA1E728006BFAB4 /* SLGallery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLGallery.m; sourceTree = "<group>"; };
 		D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Signal.m"; sourceTree = "<group>"; };
@@ -262,6 +267,7 @@
 		1D33DFA66C4C9BF6599E9721 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				D44BCB9E1FAB122C001A324F /* webserver */,
 				1D33DE39C1427BE790E1DC4F /* gallery */,
 			);
 			path = module;
@@ -315,6 +321,16 @@
 				D909E62FAEF729C3D3A708C6 /* Pods_SLPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D44BCB9E1FAB122C001A324F /* webserver */ = {
+			isa = PBXGroup;
+			children = (
+				D44BCBA21FAB12C0001A324F /* WebServer.bundle */,
+				D44BCB9F1FAB1254001A324F /* SLHTTPConnection.h */,
+				D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */,
+			);
+			path = webserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D33DC0F7F5DEDD979805BC9 /* Main.storyboard in Resources */,
+				D44BCBA31FAB12C0001A324F /* WebServer.bundle in Resources */,
 				1D33D9AB0127FC95C47CCB22 /* Assets.xcassets in Resources */,
 				1D33D79F70A5FE269653C8E9 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -451,6 +468,7 @@
 				1D33DC5BEE1830266D03BBDD /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				D4E4BA4A1FA1E728006BFAB4 /* SLGallery.m in Sources */,
 				1D33DB22A0C03B6209FECC36 /* AppDelegate.m in Sources */,
+				D44BCBA11FAB1254001A324F /* SLHTTPConnection.m in Sources */,
 				1D33DE48CF1C23DDE9E0176F /* ViewController.m in Sources */,
 				1D33D0618B31C010E6CB345C /* main.m in Sources */,
 				1D33D5A18EDE3FBAC888BF0B /* SLHamburgerButton.m in Sources */,
