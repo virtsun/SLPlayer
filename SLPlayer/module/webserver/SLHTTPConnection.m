@@ -215,6 +215,8 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path{
 
+    NSLog(@"Method = %@, path = %@", method, path);
+    
     if ([method isEqualToString:@"POST"]){
       
         if ([path isEqualToString:@"/upload"]){
@@ -231,7 +233,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
             NSDictionary* replacementDict = [NSDictionary dictionaryWithObject:filesStr forKey:@"MyFiles"];
             // use dynamic file response to apply our links to response template
             return [[HTTPDynamicFileResponse alloc] initWithFilePath:documentsDirectory forConnection:self separator:@"%" replacementDictionary:replacementDict];
-        }else if ([path containsString:@"/uploadCanceled?fileName=plupload-2.3.1.zip"]){
+        }else if ([path containsString:@"/uploadCanceled"]){
             NSString *filename = [[path componentsSeparatedByString:@"="] lastObject];
             NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self uploadDirectory] error:nil];
             for (NSString *file in files){
@@ -240,6 +242,22 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
                     break;
                 }
             }
+        }
+    }else{
+        if ([path isEqualToString:@"/items"]){
+            //返回遍历的东西
+            NSData *data = [NSJSONSerialization dataWithJSONObject:@{@"items":@[@{@"type":@"file", @"name":@"test", @"thumb":@"http://b.hiphotos.baidu.com/image/pic/item/6d81800a19d8bc3eb00690008b8ba61ea9d345e9.jpg"},@{@"type":@"folder", @"name":@"folder", @"icon":@"http://h.hiphotos.baidu.com/image/pic/item/43a7d933c895d14302cae2e97af082025baf07bf.jpg",@"path":@"sss" }]} options:NSJSONWritingPrettyPrinted error:nil];
+           return [[HTTPDataResponse alloc] initWithData:data];
+        }else if ([path containsString:@"/download"]){
+    
+            return [[HTTPFileResponse alloc] initWithFilePath:[[self uploadDirectory] stringByAppendingPathComponent:@"timg.png"] forConnection:self];
+        }else if ([path containsString:@"/items?path"]){
+            NSData *data = [NSJSONSerialization dataWithJSONObject:@{@"items":@[@{@"type":@"file", @"name":@"test", @"thumb":@"icon/n.png"},@{@"type":@"folder", @"name":@"folder", @"icon":@"icon/n.png",}]} options:NSJSONWritingPrettyPrinted error:nil];
+            return [[HTTPDataResponse alloc] initWithData:data];
+        }else if ([path containsString:@"/icon/"]){
+            NSString *docRoot = [[NSBundle mainBundle] pathForResource:@"WebServer" ofType:@"bundle"];
+
+            return [[HTTPFileResponse alloc] initWithFilePath:[docRoot stringByAppendingPathComponent:@"favicon.png"] forConnection:self];
         }
     }
 	
@@ -270,7 +288,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 - (NSString *)uploadDirectory{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths firstObject];
-    return [documentsDirectory stringByAppendingPathComponent:@"upload"];
+    return documentsDirectory;
 }
 
 - (void) processStartOfPartWithHeader:(MultipartMessageHeader*) header {
@@ -307,7 +325,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 			HTTPLogError(@"Could not create file at path: %@", filePath);
 		}
 		storeFile = [NSFileHandle fileHandleForWritingAtPath:filePath];
-		[uploadedFiles addObject: [NSString stringWithFormat:@"/upload/%@", filename]];
+		[uploadedFiles addObject: [NSString stringWithFormat:@"%@", filename]];
     }
 }
 
