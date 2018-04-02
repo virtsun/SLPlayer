@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define isIPhoneX() [UIDevice iPhoneX]
+
 @interface UIDevice(Ext)
 
 + (NSString *)platform;
-
++ (BOOL)iPhoneX;
 - (NSInteger)availableVersion:(NSString*)version;
 
 + (BOOL)beforePlatform:(NSUInteger)version;

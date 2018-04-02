@@ -14,6 +14,8 @@
 #import "SLGalleryView.h"
 #import "SLHamburgerButton.h"
 #import <CLImageEditor/CLImageEditor.h>
+#import "UIDevice+Ext.h"
+#import "SLMonitor.h"
 
 @interface ViewController ()<SLGalleryViewDelegate>
 
@@ -29,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [SLMonitor monitor];
     
     self.navigationItem.title = @"SLPlayer";
     ;
@@ -62,6 +66,8 @@
 //    self.moviePlayer.shouldAutoplay = YES;
 //    
 //    [self.moviePlayer prepareToPlay];
+    
+    NSLog(@"%@", [UIDevice iPhoneX]?[UIDevice platform]:@"sss")
 
 
     SLGalleryView *gallery = [[SLGalleryView alloc] init];

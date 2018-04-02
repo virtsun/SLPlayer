@@ -43,6 +43,7 @@
 		D44BCBA11FAB1254001A324F /* SLHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */; };
 		D44BCBA31FAB12C0001A324F /* WebServer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D44BCBA21FAB12C0001A324F /* WebServer.bundle */; };
 		D44BCBA61FAC37F2001A324F /* UIDevice+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = D44BCBA51FAC37F2001A324F /* UIDevice+Ext.m */; };
+		D4E0CAC21FC666150004E53B /* SLMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E0CAC11FC666150004E53B /* SLMonitor.m */; };
 		D4E4BA4A1FA1E728006BFAB4 /* SLGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA491FA1E728006BFAB4 /* SLGallery.m */; };
 		D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,8 @@
 		D44BCBA21FAB12C0001A324F /* WebServer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WebServer.bundle; sourceTree = "<group>"; };
 		D44BCBA41FAC37F2001A324F /* UIDevice+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Ext.h"; sourceTree = "<group>"; };
 		D44BCBA51FAC37F2001A324F /* UIDevice+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Ext.m"; sourceTree = "<group>"; };
+		D4E0CAC01FC666150004E53B /* SLMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLMonitor.h; sourceTree = "<group>"; };
+		D4E0CAC11FC666150004E53B /* SLMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLMonitor.m; sourceTree = "<group>"; };
 		D4E4BA481FA1E728006BFAB4 /* SLGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLGallery.h; sourceTree = "<group>"; };
 		D4E4BA491FA1E728006BFAB4 /* SLGallery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLGallery.m; sourceTree = "<group>"; };
 		D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Signal.m"; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 		1D33DD8A55FF36FF44375165 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				D4E0CABF1FC665F60004E53B /* monitor */,
 				1D33D4BCA099B7462B9B16D1 /* HamburgerButton */,
 			);
 			path = custom;
@@ -336,6 +340,15 @@
 				D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */,
 			);
 			path = webserver;
+			sourceTree = "<group>";
+		};
+		D4E0CABF1FC665F60004E53B /* monitor */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0CAC01FC666150004E53B /* SLMonitor.h */,
+				D4E0CAC11FC666150004E53B /* SLMonitor.m */,
+			);
+			path = monitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +481,7 @@
 				1D33D6AA891FB7293BD0CADB /* BSBacktraceLogger.m in Sources */,
 				1D33D521E526C87FCBBB13FB /* NSArray+Swizzling.m in Sources */,
 				D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */,
+				D4E0CAC21FC666150004E53B /* SLMonitor.m in Sources */,
 				1D33DF46211C802B5A607AB7 /* NSDictionary+NilSafe.m in Sources */,
 				1D33DBFAA41258D3B6E2E35B /* NSObject+Swizzling.m in Sources */,
 				1D33DC5BEE1830266D03BBDD /* UINavigationController+FDFullscreenPopGesture.m in Sources */,

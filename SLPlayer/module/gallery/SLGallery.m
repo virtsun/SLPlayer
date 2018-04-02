@@ -2,7 +2,7 @@
 //  SLGallery.m
 //  SLPlayer
 //
-//  Created by YHL on 2017/10/26.
+//  Created by l.t.zero on 2017/10/26.
 //  Copyright © 2017年 l.t.zero. All rights reserved.
 //
 
@@ -98,11 +98,29 @@
         PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:cameraRoll options:nil];
         
         for (PHAsset *asset in assets){
-            [array addObject:asset];
+            if (asset.mediaType == PHAssetMediaTypeVideo){
+        
+                [array addObject:asset];
+            }
         }
         return array;
     }
 }
 
+
++ (void)fetchVideoPathFromPHAsset:(PHAsset *)asset Complete:(void(^)(AVURLAsset *, CGFloat))result {
+    
+    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset *asset, AVAudioMix *audioMix, NSDictionary *info) {
+        if ([asset isKindOfClass:[AVURLAsset class]]) {
+            
+            AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+            gen.appliesPreferredTrackTransform = YES;
+            
+            CGFloat duration = CMTimeGetSeconds(asset.duration);
+            if (result) result((AVURLAsset*)asset, duration);
+           
+        }
+    }];
+}
 
 @end

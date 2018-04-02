@@ -35,6 +35,16 @@
     
     return NO;
 }
+
++ (BOOL)iPhoneX{
+#if TARGET_IPHONE_SIMULATOR
+    return CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(375, 812))
+    || CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(812, 375));
+#else
+    return [[self platform] isEqualToString:@"iPhone X"];
+#endif
+}
+
 + (NSString *)platform{
      size_t size;
      sysctlbyname("hw.machine", NULL, &size, NULL, 0);
