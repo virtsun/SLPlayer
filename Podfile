@@ -6,6 +6,7 @@ target 'SLPlayer' do
     pod 'iCarousel', '~> 1.8.3'
     pod 'CLImageEditor'
     pod 'CVCocoaHTTPServer', '~> 1.0'
+    pod ‘FBRetainCycleDetector’
 
 end
 

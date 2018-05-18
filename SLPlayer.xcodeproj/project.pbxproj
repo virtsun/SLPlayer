@@ -48,6 +48,19 @@
 		D4E4BA561FA326D1006BFAB4 /* NSException+Signal.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E4BA541FA326CD006BFAB4 /* NSException+Signal.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D41724522074C3500073483F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B5F1668ABD97D3840186344 /* Pods-SLPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLPlayer/Pods-SLPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		18E9A9252B5C53D86FB9B304 /* Pods-SLPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLPlayer/Pods-SLPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +111,8 @@
 		D4005FBB1FA0669200CB06D8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D4005FBD1FA066D300CB06D8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D400601D1FA07E9C00CB06D8 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		D41724402074C34F0073483F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		D41724422074C3500073483F /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		D44BCB9F1FAB1254001A324F /* SLHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLHTTPConnection.h; sourceTree = "<group>"; };
 		D44BCBA01FAB1254001A324F /* SLHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLHTTPConnection.m; sourceTree = "<group>"; };
 		D44BCBA21FAB12C0001A324F /* WebServer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WebServer.bundle; sourceTree = "<group>"; };
@@ -328,6 +343,8 @@
 				D4005FA41FA0655900CB06D8 /* AudioToolbox.framework */,
 				D4005FA21FA0654D00CB06D8 /* libstdc++.tbd */,
 				D909E62FAEF729C3D3A708C6 /* Pods_SLPlayer.framework */,
+				D41724402074C34F0073483F /* UserNotifications.framework */,
+				D41724422074C3500073483F /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -364,6 +381,7 @@
 				D4005F801FA0625200CB06D8 /* Resources */,
 				9A3591976B07BC33F58BC099 /* [CP] Embed Pods Frameworks */,
 				78F5585CFCF226EA5E4BC48D /* [CP] Copy Pods Resources */,
+				D41724522074C3500073483F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);

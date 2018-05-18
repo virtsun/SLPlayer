@@ -48,7 +48,7 @@
     hamburger.transform = CGAffineTransformMakeScale(0.6f, 0.6f);
     [hamburger addTarget:self action:@selector(hamburgerClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:hamburger]];
-
+    
 //
 //    IJKFFOptions *option = [IJKFFOptions optionsByDefault];
 //    //静音设置
